@@ -1,126 +1,995 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wesley & Japita - 1 Ano de Amor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: #fff0f5;
-      color: #333;
-    }
-    header {
-      background: #b30059;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-    }
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-    }
-    .frase {
-      font-size: 1.5rem;
-      margin-top: 1rem;
-    }
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .galeria img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    .carta {
-      background: #ffe6f0;
-      border-radius: 12px;
-      padding: 2rem;
-      margin-top: 2rem;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-    .linha-do-tempo {
-      margin-top: 2rem;
-      border-left: 3px solid #b30059;
-      padding-left: 1rem;
-    }
-    .evento {
-      margin-bottom: 1rem;
-    }
-    .evento strong {
-      color: #b30059;
-    }
-    footer {
-      background: #b30059;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-    audio {
-      display: block;
-      margin: 2rem auto 0;
-    }
-  </style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wesley & Japita - 1 Ano de Amor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+* {
+
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
+}
+
+body {
+
+font-family: 'Open Sans', sans-serif;
+
+background: linear-gradient(135deg, #fff0f5 0%, #ffe6f0 100%);
+
+color: #333;
+
+min-height: 100vh;
+
+padding-bottom: 2rem;
+
+overflow-x: hidden;
+
+}
+
+/* Overlay de Início */
+
+#startOverlay {
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+background: linear-gradient(135deg, #b30059 0%, #ff0066 100%);
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+z-index: 1000;
+
+text-align: center;
+
+padding: 20px;
+
+color: white;
+
+}
+
+#startOverlay h2 {
+
+font-family: 'Great Vibes', cursive;
+
+font-size: 4rem;
+
+margin-bottom: 1rem;
+
+text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+
+}
+
+#startOverlay p {
+
+font-size: 1.5rem;
+
+max-width: 600px;
+
+margin-bottom: 2rem;
+
+line-height: 1.6;
+
+}
+
+#startButton {
+
+background: white;
+
+color: #b30059;
+
+border: none;
+
+padding: 15px 50px;
+
+font-size: 1.2rem;
+
+border-radius: 50px;
+
+cursor: pointer;
+
+font-weight: bold;
+
+box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+#startButton:hover {
+
+transform: translateY(-3px);
+
+box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+
+}
+
+.heart-beat {
+
+animation: heartbeat 1.5s infinite;
+
+display: inline-block;
+
+margin: 0 10px;
+
+}
+
+@keyframes heartbeat {
+
+0% { transform: scale(1); }
+
+25% { transform: scale(1.2); }
+
+50% { transform: scale(1); }
+
+75% { transform: scale(1.2); }
+
+100% { transform: scale(1); }
+
+}
+
+/* Restante do CSS (igual ao anterior) */
+
+header {
+
+background: linear-gradient(to right, #b30059, #ff0066);
+
+color: white;
+
+text-align: center;
+
+padding: 3rem 2rem;
+
+position: relative;
+
+overflow: hidden;
+
+}
+
+header::before {
+
+content: "";
+
+position: absolute;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+
+background-size: cover;
+
+}
+
+header h1 {
+
+font-family: 'Great Vibes', cursive;
+
+font-size: 4rem;
+
+margin-bottom: 0.5rem;
+
+position: relative;
+
+z-index: 1;
+
+text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+
+}
+
+.frase {
+
+font-size: 1.8rem;
+
+margin-top: 1rem;
+
+position: relative;
+
+z-index: 1;
+
+font-style: italic;
+
+}
+
+.heart {
+
+color: #ffccd5;
+
+animation: pulse 1.5s infinite;
+
+}
+
+@keyframes pulse {
+
+0% { transform: scale(1); }
+
+50% { transform: scale(1.2); }
+
+100% { transform: scale(1); }
+
+}
+
+section {
+
+padding: 2rem;
+
+max-width: 1000px;
+
+margin: -50px auto 0;
+
+position: relative;
+
+z-index: 2;
+
+}
+
+.card {
+
+background: white;
+
+border-radius: 16px;
+
+box-shadow: 0 8px 30px rgba(179, 0, 89, 0.15);
+
+padding: 2.5rem;
+
+margin-bottom: 2rem;
+
+transition: transform 0.3s ease;
+
+}
+
+.card:hover {
+
+transform: translateY(-5px);
+
+}
+
+.card h2 {
+
+color: #b30059;
+
+margin-bottom: 1.5rem;
+
+font-size: 2rem;
+
+text-align: center;
+
+position: relative;
+
+}
+
+.card h2::after {
+
+content: "";
+
+display: block;
+
+width: 80px;
+
+height: 3px;
+
+background: linear-gradient(to right, #b30059, #ff0066);
+
+margin: 10px auto 0;
+
+border-radius: 3px;
+
+}
+
+.galeria {
+
+display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+gap: 1.5rem;
+
+}
+
+.galeria img {
+
+width: 100%;
+
+border-radius: 12px;
+
+box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+aspect-ratio: 1/1;
+
+object-fit: cover;
+
+}
+
+.galeria img:hover {
+
+transform: scale(1.05);
+
+box-shadow: 0 10px 25px rgba(179, 0, 89, 0.2);
+
+}
+
+.carta {
+
+background: #fff9fb;
+
+font-size: 1.15rem;
+
+line-height: 1.8;
+
+}
+
+.carta p {
+
+margin-bottom: 1.5rem;
+
+text-align: justify;
+
+}
+
+.carta p:last-child {
+
+text-align: right;
+
+font-weight: bold;
+
+color: #b30059;
+
+margin-top: 1.5rem;
+
+}
+
+.linha-do-tempo {
+
+border-left: 4px solid #b30059;
+
+padding-left: 2rem;
+
+position: relative;
+
+}
+
+.linha-do-tempo::before {
+
+content: "";
+
+position: absolute;
+
+top: 0;
+
+left: -4px;
+
+width: 8px;
+
+height: 8px;
+
+background: #b30059;
+
+border-radius: 50%;
+
+}
+
+.linha-do-tempo::after {
+
+content: "";
+
+position: absolute;
+
+bottom: 0;
+
+left: -4px;
+
+width: 8px;
+
+height: 8px;
+
+background: #b30059;
+
+border-radius: 50%;
+
+}
+
+.evento {
+
+margin-bottom: 2rem;
+
+padding-bottom: 1rem;
+
+border-bottom: 1px dashed #ffccd5;
+
+position: relative;
+
+padding-left: 1.5rem;
+
+}
+
+.evento:last-child {
+
+border-bottom: none;
+
+margin-bottom: 0;
+
+}
+
+.evento::before {
+
+content: "";
+
+position: absolute;
+
+left: -2.3rem;
+
+top: 5px;
+
+width: 16px;
+
+height: 16px;
+
+background: #ff0066;
+
+border-radius: 50%;
+
+border: 3px solid white;
+
+box-shadow: 0 0 0 2px #b30059;
+
+}
+
+.evento strong {
+
+color: #b30059;
+
+font-size: 1.1rem;
+
+}
+
+.audio-player {
+
+background: white;
+
+border-radius: 16px;
+
+padding: 2rem;
+
+text-align: center;
+
+margin-top: 2rem;
+
+}
+
+.player-title {
+
+color: #b30059;
+
+margin-bottom: 1.5rem;
+
+font-size: 1.5rem;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 10px;
+
+}
+
+.player-title i {
+
+color: #ff0066;
+
+}
+
+.player-controls {
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+gap: 20px;
+
+margin-top: 1rem;
+
+}
+
+.play-btn {
+
+width: 60px;
+
+height: 60px;
+
+border-radius: 50%;
+
+background: linear-gradient(to right, #b30059, #ff0066);
+
+color: white;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+cursor: pointer;
+
+box-shadow: 0 4px 15px rgba(179, 0, 89, 0.3);
+
+transition: transform 0.3s ease;
+
+}
+
+.play-btn:hover {
+
+transform: scale(1.1);
+
+}
+
+.play-btn i {
+
+font-size: 1.8rem;
+
+}
+
+.volume-control {
+
+display: flex;
+
+align-items: center;
+
+gap: 10px;
+
+}
+
+.volume-control i {
+
+color: #b30059;
+
+}
+
+input[type="range"] {
+
+width: 100px;
+
+accent-color: #b30059;
+
+}
+
+footer {
+
+background: linear-gradient(to right, #b30059, #ff0066);
+
+color: white;
+
+text-align: center;
+
+padding: 1.5rem;
+
+margin-top: 3rem;
+
+border-radius: 12px;
+
+max-width: 1000px;
+
+margin: 3rem auto 0;
+
+}
+
+.hearts {
+
+display: flex;
+
+justify-content: center;
+
+gap: 15px;
+
+margin-top: 15px;
+
+font-size: 1.8rem;
+
+color: #ffccd5;
+
+}
+
+@media (max-width: 768px) {
+
+header h1 {
+
+font-size: 3rem;
+
+}
+
+.frase {
+
+font-size: 1.4rem;
+
+}
+
+.card {
+
+padding: 1.5rem;
+
+}
+
+.galeria {
+
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+}
+
+#startOverlay h2 {
+
+font-size: 3rem;
+
+}
+
+#startOverlay p {
+
+font-size: 1.2rem;
+
+}
+
+}
+
+@media (max-width: 480px) {
+
+header {
+
+padding: 2rem 1rem;
+
+}
+
+header h1 {
+
+font-size: 2.5rem;
+
+}
+
+.frase {
+
+font-size: 1.2rem;
+
+}
+
+section {
+
+padding: 1rem;
+
+}
+
+.card {
+
+padding: 1.2rem;
+
+}
+
+#startOverlay h2 {
+
+font-size: 2.5rem;
+
+}
+
+#startOverlay p {
+
+font-size: 1rem;
+
+}
+
+#startButton {
+
+padding: 12px 40px;
+
+font-size: 1rem;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <header>
-    <h1>Wesley & Japita</h1>
-    <p class="frase">Tudo que sonhei encontro em você, minha linda.</p>
-  </header>
 
-  <section>
-    <h2>Nosso Amor em Fotos</h2>
-    <div class="galeria">
-      <img src="021124ba-3779-4f31-90bc-2755bb419c47.jpg" alt="Foto 1">
-      <img src="18bb02a3-8e53-4543-9097-4c705f6b6a28.jpg" alt="Foto 2">
-      <img src="43a61549-d649-4d55-a356-dd6be2619fb2.jpg" alt="Foto 3">
-      <img src="49283a7b-bcea-4db9-92ac-1c4429a3621d.jpg" alt="Foto 4">
-      <img src="4b57ef15-75c5-4775-892e-04dad75f66f5.jpg" alt="Foto 5">
-      <img src="4ecf46ef-d356-4418-b5c5-2ba783e9d208.jpg" alt="Foto 6">
-      <img src="7696e164-242c-4ec1-9f3a-366d37930bf4.jpg" alt="Foto 7">
-      <img src="7ae5f90c-e79d-487b-8d4d-e6e7ee548f0d.jpg" alt="Foto 8">
-      <img src="e29b4e50-9bc1-4d2d-89c8-b0296600cb6e.jpg" alt="Foto 9">
-      <img src="f5f2e450-f907-4506-9141-9bcac309320c.jpg" alt="Foto 10">
-    </div>
+<!-- Overlay de Início -->
 
-    <div class="carta">
-      <h2>Para minha Japita, com amor.</h2>
-      <p>Há exatamente um ano, Deus me deu um presente que transformou minha vida: você. Mesmo com a distância, cada conversa, cada risada, cada silêncio compartilhado foi um passo firme no caminho que estamos construindo.</p>
-      <p>Você é a paz no meio dos meus dias corridos, o abraço que falta no fim da noite, o sorriso que aquece qualquer tela.</p>
-      <p>Se eu pudesse estar aí agora, te daria um abraço longo, daqueles que dizem tudo sem precisar de palavras. Mas até esse momento chegar, deixo aqui este presente com tudo que carrego no coração.</p>
-      <p>Obrigado por me escolher, por me amar e por ser essa mulher incrível. 💖</p>
-      <p>Com amor, Wes hahaha.</p>
-    </div>
+<div id="startOverlay">
 
-    <div class="linha-do-tempo">
-      <h2>Linha do Tempo</h2>
-      <div class="evento"><strong>09/06/2024:</strong> Começamos nosso namoro 💑</div>
-      <div class="evento"><strong>Julho 2024:</strong> Nossa primeiro mês distantes :( 📱</div>
-      <div class="evento"><strong>Setembro 2024:</strong> Fim do período de experiência hahaha 🧁</div>
-      <div class="evento"><strong>Dezembro 2024:</strong> Nosso primeiro Natal e ano novo juntos 🎄</div>
-      <div class="evento"><strong>Junho 2025:</strong> Celebramos 1 ano de muito amor ❤️</div>
-    </div>
+<h2>Wesley & Japita</h2>
 
-    <audio controls autoplay loop>
-      <source src="lady_in_red.mp3" type="audio/mpeg">
-    
-    </audio>
-  </section>
+<p>Para você, minha linda, que completa meu mundo. <span class="heart-beat">❤</span></p>
 
-  <footer>
-    <p>Feito com amor por Wesley para Japita 💖</p>
-  </footer>
+<p>Clique no botão abaixo para iniciar nossa viagem no tempo.</p>
+
+<button id="startButton">Iniciar a Música e a Experiência</button>
+
+</div>
+
+<!-- Conteúdo Principal (inicialmente oculto) -->
+
+<div id="content" style="display: none;">
+
+<header>
+
+<h1>Wesley <span class="heart">❤</span> Japita</h1>
+
+<p class="frase">"Tudo que sonhei encontro em você, minha linda"</p>
+
+</header>
+
+<section>
+
+<div class="card">
+
+<h2>Nosso Amor em Fotos</h2>
+
+<div class="galeria">
+
+<img src="021124ba-3779-4f31-90bc-2755bb419c47.jpg" alt="Nossa foto 1">
+
+<img src="18bb02a3-8e53-4543-9097-4c705f6b6a28.jpg" alt="Nossa foto 2">
+
+<img src="43a61549-d649-4d55-a356-dd6be2619fb2.jpg" alt="Nossa foto 3">
+
+<img src="49283a7b-bcea-4db9-92ac-1c4429a3621d.jpg" alt="Nossa foto 4">
+
+<img src="4b57ef15-75c5-4775-892e-04dad75f66f5.jpg" alt="Nossa foto 5">
+
+<img src="4ecf46ef-d356-4418-b5c5-2ba783e9d208.jpg" alt="Nossa foto 6">
+
+<img src="7696e164-242c-4ec1-9f3a-366d37930bf4.jpg" alt="Nossa foto 7">
+
+<img src="7ae5f90c-e79d-487b-8d4d-e6e7ee548f0d.jpg" alt="Nossa foto 8">
+
+<img src="e29b4e50-9bc1-4d2d-89c8-b0296600cb6e.jpg" alt="Nossa foto 9">
+
+<img src="f5f2e450-f907-4506-9141-9bcac309320c.jpg" alt="Nossa foto 10">
+
+</div>
+
+</div>
+
+<div class="card carta">
+
+<h2>Para minha Japita, com amor.</h2>
+
+<p>Há exatamente um ano, Deus me deu um presente que transformou minha vida: você. Mesmo com a distância, cada conversa, cada risada, cada silêncio compartilhado foi um passo firme no caminho que estamos construindo.</p>
+
+<p>Você é a paz no meio dos meus dias corridos, o abraço que falta no fim da noite, o sorriso que aquece qualquer tela.</p>
+
+<p>Se eu pudesse estar aí agora, te daria um abraço longo, daqueles que dizem tudo sem precisar de palavras. Mas até esse momento chegar, deixo aqui este presente com tudo que carrego no coração.</p>
+
+<p>Obrigado por me escolher, por me amar e por ser essa mulher incrível. 💖</p>
+
+<p>Com amor, Wes hahaha.</p>
+
+</div>
+
+<div class="card">
+
+<h2>Linha do Tempo</h2>
+
+<div class="linha-do-tempo">
+
+<div class="evento"><strong>09/06/2024:</strong> Começamos nosso namoro 💑</div>
+
+<div class="evento"><strong>Julho 2024:</strong> Nossa primeiro mês distantes :( 📱</div>
+
+<div class="evento"><strong>Setembro 2024:</strong> Fim do período de experiência hahaha 🧁</div>
+
+<div class="evento"><strong>Dezembro 2024:</strong> Nosso primeiro Natal e ano novo juntos 🎄</div>
+
+<div class="evento"><strong>Junho 2025:</strong> Celebramos 1 ano de muito amor ❤️</div>
+
+</div>
+
+</div>
+
+<div class="card audio-player">
+
+<h3 class="player-title"><i class="fas fa-music"></i> Nossa Música Especial</h3>
+
+<p>"Lady in Red" - Chris de Burgh</p>
+
+<div class="player-controls">
+
+<div class="play-btn" id="playButton">
+
+<i class="fas fa-play"></i>
+
+</div>
+
+<div class="volume-control">
+
+<i class="fas fa-volume-up"></i>
+
+<input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.7">
+
+</div>
+
+</div>
+
+<audio id="loveAudio">
+
+<!-- Substitua pelo caminho correto do seu arquivo de áudio -->
+
+<source src="whatsapp audio 2025-06-07 at 23.02.59.mpeg" type="audio/mpeg">
+
+Seu navegador não suporta o áudio.
+
+</audio>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>Feito com amor por Wesley para Japita</p>
+
+<div class="hearts">
+
+<span>💖</span>
+
+<span>💖</span>
+
+<span>💖</span>
+
+<span>💖</span>
+
+<span>💖</span>
+
+</div>
+
+<p>09/06/2024 - 09/06/2025</p>
+
+</footer>
+
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+const startOverlay = document.getElementById('startOverlay');
+
+const content = document.getElementById('content');
+
+const startButton = document.getElementById('startButton');
+
+const audio = document.getElementById('loveAudio');
+
+const playButton = document.getElementById('playButton');
+
+const playIcon = playButton.querySelector('i');
+
+const volumeControl = document.getElementById('volumeControl');
+
+// Configurar volume inicial
+
+audio.volume = volumeControl.value;
+
+// Controlador de volume
+
+volumeControl.addEventListener('input', function() {
+
+audio.volume = volumeControl.value;
+
+});
+
+// Botão play/pause
+
+playButton.addEventListener('click', function() {
+
+if (audio.paused) {
+
+audio.play();
+
+playIcon.classList.remove('fa-play');
+
+playIcon.classList.add('fa-pause');
+
+} else {
+
+audio.pause();
+
+playIcon.classList.remove('fa-pause');
+
+playIcon.classList.add('fa-play');
+
+}
+
+});
+
+// Atualizar ícone quando o áudio terminar
+
+audio.addEventListener('ended', function() {
+
+playIcon.classList.remove('fa-pause');
+
+playIcon.classList.add('fa-play');
+
+});
+
+// Iniciar experiência ao clicar no botão inicial
+
+startButton.addEventListener('click', function() {
+
+// Iniciar a música
+
+audio.play().then(() => {
+
+// A reprodução começou com sucesso
+
+playIcon.classList.remove('fa-play');
+
+playIcon.classList.add('fa-pause');
+
+// Esconder overlay e mostrar conteúdo
+
+startOverlay.style.display = 'none';
+
+content.style.display = 'block';
+
+// Rolagem suave para o topo do conteúdo
+
+window.scrollTo(0, 0);
+
+}).catch(error => {
+
+console.error("Erro ao reproduzir áudio:", error);
+
+// Se houver erro, ainda assim mostra o conteúdo
+
+startOverlay.style.display = 'none';
+
+content.style.display = 'block';
+
+});
+
+});
+
+});
+
+</script>
+
 </body>
-</html>
 
+</html>
