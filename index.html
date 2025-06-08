@@ -18,96 +18,7 @@
       background: linear-gradient(135deg, #fff0f5 0%, #ffe6f0 100%);
       color: #333;
       min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-    
-    /* Tela de inicialização */
-    #start-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #b30059 0%, #ff0066 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      z-index: 1000;
-      padding: 20px;
-      transition: opacity 1s ease, transform 1s ease;
-    }
-    
-    #start-screen.hidden {
-      opacity: 0;
-      transform: translateY(-100%);
-      pointer-events: none;
-    }
-    
-    #start-screen h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 4rem;
-      color: white;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-    
-    #start-screen p {
-      font-size: 1.5rem;
-      color: #ffccd5;
-      max-width: 600px;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-    
-    #start-button {
-      background: white;
-      color: #b30059;
-      border: none;
-      padding: 15px 50px;
-      font-size: 1.3rem;
-      border-radius: 50px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    #start-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 25px rgba(0,0,0,0.4);
-      background: #fff0f5;
-    }
-    
-    .heart-pulse {
-      animation: pulse 1.5s infinite;
-      color: #ffccd5;
-      font-size: 2rem;
-      margin: 20px 0;
-    }
-    
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-    
-    /* Conteúdo principal (inicialmente oculto) */
-    #main-content {
-      display: none;
-      opacity: 0;
-      transition: opacity 1s ease;
       padding-bottom: 2rem;
-    }
-    
-    #main-content.visible {
-      display: block;
-      opacity: 1;
     }
     
     header {
@@ -150,6 +61,12 @@
     .heart {
       color: #ffccd5;
       animation: pulse 1.5s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
     }
     
     section {
@@ -391,14 +308,6 @@
       .galeria {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       }
-      
-      #start-screen h1 {
-        font-size: 3rem;
-      }
-      
-      #start-screen p {
-        font-size: 1.2rem;
-      }
     }
     
     @media (max-width: 480px) {
@@ -421,117 +330,88 @@
       .card {
         padding: 1.2rem;
       }
-      
-      #start-screen h1 {
-        font-size: 2.5rem;
-      }
-      
-      #start-screen p {
-        font-size: 1rem;
-      }
-      
-      #start-button {
-        padding: 12px 40px;
-        font-size: 1rem;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Tela de inicialização para a música -->
-  <div id="start-screen">
-    <h1>Wesley & Japita</h1>
-    <div class="heart-pulse">❤</div>
-    <p>Para você, minha linda, que completa meu mundo. Este é nosso primeiro aniversário de namoro e queria celebrar de uma forma especial.</p>
-    <p>Para uma experiência completa, por favor inicie a música antes de continuar.</p>
-    <button id="start-button">
-      <i class="fas fa-play"></i> Iniciar Música e Continuar
-    </button>
-  </div>
+  <header>
+    <h1>Wesley <span class="heart">❤</span> Japita</h1>
+    <p class="frase">"Tudo que sonhei encontro em você, minha linda"</p>
+  </header>
 
-  <!-- Conteúdo principal (inicialmente oculto) -->
-  <div id="main-content">
-    <header>
-      <h1>Wesley <span class="heart">❤</span> Japita</h1>
-      <p class="frase">"Tudo que sonhei encontro em você, minha linda"</p>
-    </header>
+  <section>
+    <div class="card">
+      <h2>Nosso Amor em Fotos</h2>
+      <div class="galeria">
+        <img src="021124ba-3779-4f31-90bc-2755bb419c47.jpg" alt="Nossa foto 1">
+        <img src="18bb02a3-8e53-4543-9097-4c705f6b6a28.jpg" alt="Nossa foto 2">
+        <img src="43a61549-d649-4d55-a356-dd6be2619fb2.jpg" alt="Nossa foto 3">
+        <img src="49283a7b-bcea-4db9-92ac-1c4429a3621d.jpg" alt="Nossa foto 4">
+        <img src="4b57ef15-75c5-4775-892e-04dad75f66f5.jpg" alt="Nossa foto 5">
+        <img src="4ecf46ef-d356-4418-b5c5-2ba783e9d208.jpg" alt="Nossa foto 6">
+        <img src="7696e164-242c-4ec1-9f3a-366d37930bf4.jpg" alt="Nossa foto 7">
+        <img src="7ae5f90c-e79d-487b-8d4d-e6e7ee548f0d.jpg" alt="Nossa foto 8">
+        <img src="e29b4e50-9bc1-4d2d-89c8-b0296600cb6e.jpg" alt="Nossa foto 9">
+        <img src="f5f2e450-f907-4506-9141-9bcac309320c.jpg" alt="Nossa foto 10">
+      </div>
+    </div>
 
-    <section>
-      <div class="card">
-        <h2>Nosso Amor em Fotos</h2>
-        <div class="galeria">
-          <img src="021124ba-3779-4f31-90bc-2755bb419c47.jpg" alt="Nossa foto 1">
-          <img src="18bb02a3-8e53-4543-9097-4c705f6b6a28.jpg" alt="Nossa foto 2">
-          <img src="43a61549-d649-4d55-a356-dd6be2619fb2.jpg" alt="Nossa foto 3">
-          <img src="49283a7b-bcea-4db9-92ac-1c4429a3621d.jpg" alt="Nossa foto 4">
-          <img src="4b57ef15-75c5-4775-892e-04dad75f66f5.jpg" alt="Nossa foto 5">
-          <img src="4ecf46ef-d356-4418-b5c5-2ba783e9d208.jpg" alt="Nossa foto 6">
-          <img src="7696e164-242c-4ec1-9f3a-366d37930bf4.jpg" alt="Nossa foto 7">
-          <img src="7ae5f90c-e79d-487b-8d4d-e6e7ee548f0d.jpg" alt="Nossa foto 8">
-          <img src="e29b4e50-9bc1-4d2d-89c8-b0296600cb6e.jpg" alt="Nossa foto 9">
-          <img src="f5f2e450-f907-4506-9141-9bcac309320c.jpg" alt="Nossa foto 10">
+    <div class="card carta">
+      <h2>Para minha Japita, com amor.</h2>
+      <p>Há exatamente um ano, Deus me deu um presente que transformou minha vida: você. Mesmo com a distância, cada conversa, cada risada, cada silêncio compartilhado foi um passo firme no caminho que estamos construindo.</p>
+      <p>Você é a paz no meio dos meus dias corridos, o abraço que falta no fim da noite, o sorriso que aquece qualquer tela.</p>
+      <p>Se eu pudesse estar aí agora, te daria um abraço longo, daqueles que dizem tudo sem precisar de palavras. Mas até esse momento chegar, deixo aqui este presente com tudo que carrego no coração.</p>
+      <p>Obrigado por me escolher, por me amar e por ser essa mulher incrível. 💖</p>
+      <p>Com amor, Wes hahaha.</p>
+    </div>
+
+    <div class="card">
+      <h2>Linha do Tempo</h2>
+      <div class="linha-do-tempo">
+        <div class="evento"><strong>09/06/2024:</strong> Começamos nosso namoro 💑</div>
+        <div class="evento"><strong>Julho 2024:</strong> Nossa primeiro mês distantes :( 📱</div>
+        <div class="evento"><strong>Setembro 2024:</strong> Fim do período de experiência hahaha 🧁</div>
+        <div class="evento"><strong>Dezembro 2024:</strong> Nosso primeiro Natal e ano novo juntos 🎄</div>
+        <div class="evento"><strong>Junho 2025:</strong> Celebramos 1 ano de muito amor ❤️</div>
+      </div>
+    </div>
+
+    <div class="card audio-player">
+      <h3 class="player-title"><i class="fas fa-music"></i> Nossa Música Especial</h3>
+      <p>"Lady in Red" - Chris de Burgh</p>
+      
+      <div class="player-controls">
+        <div class="play-btn" id="playButton">
+          <i class="fas fa-play"></i>
+        </div>
+        <div class="volume-control">
+          <i class="fas fa-volume-up"></i>
+          <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.7">
         </div>
       </div>
+      
+      <audio id="loveAudio">
+        <!-- Substitua pelo caminho correto do seu arquivo de áudio -->
+        <source src="lady_in_red.mp3" type="audio/mpeg">
+        Seu navegador não suporta o áudio.
+      </audio>
+    </div>
+  </section>
 
-      <div class="card carta">
-        <h2>Para minha Japita, com amor.</h2>
-        <p>Há exatamente um ano, Deus me deu um presente que transformou minha vida: você. Mesmo com a distância, cada conversa, cada risada, cada silêncio compartilhado foi um passo firme no caminho que estamos construindo.</p>
-        <p>Você é a paz no meio dos meus dias corridos, o abraço que falta no fim da noite, o sorriso que aquece qualquer tela.</p>
-        <p>Se eu pudesse estar aí agora, te daria um abraço longo, daqueles que dizem tudo sem precisar de palavras. Mas até esse momento chegar, deixo aqui este presente com tudo que carrego no coração.</p>
-        <p>Obrigado por me escolher, por me amar e por ser essa mulher incrível. 💖</p>
-        <p>Com amor, Wes hahaha.</p>
-      </div>
-
-      <div class="card">
-        <h2>Linha do Tempo</h2>
-        <div class="linha-do-tempo">
-          <div class="evento"><strong>09/06/2024:</strong> Começamos nosso namoro 💑</div>
-          <div class="evento"><strong>Julho 2024:</strong> Nossa primeiro mês distantes :( 📱</div>
-          <div class="evento"><strong>Setembro 2024:</strong> Fim do período de experiência hahaha 🧁</div>
-          <div class="evento"><strong>Dezembro 2024:</strong> Nosso primeiro Natal e ano novo juntos 🎄</div>
-          <div class="evento"><strong>Junho 2025:</strong> Celebramos 1 ano de muito amor ❤️</div>
-        </div>
-      </div>
-
-      <div class="card audio-player">
-        <h3 class="player-title"><i class="fas fa-music"></i> Nossa Música Especial</h3>
-        <p>"Lady in Red" - Chris de Burgh</p>
-        
-        <div class="player-controls">
-          <div class="play-btn" id="playButton">
-            <i class="fas fa-pause"></i>
-          </div>
-          <div class="volume-control">
-            <i class="fas fa-volume-up"></i>
-            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.7">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <p>Feito com amor por Wesley para Japita</p>
-      <div class="hearts">
-        <span>💖</span>
-        <span>💖</span>
-        <span>💖</span>
-        <span>💖</span>
-        <span>💖</span>
-      </div>
-      <p>09/06/2024 - 09/06/2025</p>
-    </footer>
-  </div>
-
-  <audio id="loveAudio" loop>
-    <source src="whatsapp audio 2025-06-07 at 23.02.59.mpeg" type="audio/mpeg">
-    Seu navegador não suporta o áudio.
-  </audio>
+  <footer>
+    <p>Feito com amor por Wesley para Japita</p>
+    <div class="hearts">
+      <span>💖</span>
+      <span>💖</span>
+      <span>💖</span>
+      <span>💖</span>
+      <span>💖</span>
+    </div>
+    <p>09/06/2024 - 09/06/2025</p>
+  </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const startScreen = document.getElementById('start-screen');
-      const mainContent = document.getElementById('main-content');
-      const startButton = document.getElementById('start-button');
       const audio = document.getElementById('loveAudio');
       const playButton = document.getElementById('playButton');
       const playIcon = playButton.querySelector('i');
@@ -558,48 +438,12 @@
         }
       });
       
-      // Iniciar experiência
-      startButton.addEventListener('click', function() {
-        // Tentar reproduzir o áudio
-        audio.play().then(() => {
-          // Sucesso: esconder tela inicial e mostrar conteúdo
-          startScreen.classList.add('hidden');
-          mainContent.classList.add('visible');
-          
-          // Atualizar ícone do player
-          playIcon.classList.remove('fa-play');
-          playIcon.classList.add('fa-pause');
-        }).catch(error => {
-          console.error("Erro ao reproduzir áudio:", error);
-          // Se houver erro, ainda assim mostrar o conteúdo
-          startScreen.classList.add('hidden');
-          mainContent.classList.add('visible');
-          
-          // Exibir alerta
-          alert("Não foi possível iniciar a música automaticamente. Por favor, inicie manualmente no player abaixo.");
-        });
-      });
-      
       // Atualizar ícone quando o áudio terminar
       audio.addEventListener('ended', function() {
         playIcon.classList.remove('fa-pause');
         playIcon.classList.add('fa-play');
       });
     });
-  <script>
-  document.getElementById('start-button').addEventListener('click', function() {
-    const startScreen = document.getElementById('start-screen');
-    const mainContent = document.getElementById('main-content');
-
-    // Esconde a tela inicial com animação
-    startScreen.classList.add('hidden');
-
-    // Aguarda a animação terminar antes de mostrar o conteúdo principal
-    setTimeout(() => {
-      mainContent.classList.add('visible');
-    }, 1000); // corresponde ao tempo da animação de transição
-  });
-</script>
-
+  </script>
 </body>
 </html>
