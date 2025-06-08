@@ -586,6 +586,20 @@
         playIcon.classList.add('fa-play');
       });
     });
-  </script>
+  <script>
+  document.getElementById('start-button').addEventListener('click', function() {
+    const startScreen = document.getElementById('start-screen');
+    const mainContent = document.getElementById('main-content');
+
+    // Esconde a tela inicial com animação
+    startScreen.classList.add('hidden');
+
+    // Aguarda a animação terminar antes de mostrar o conteúdo principal
+    setTimeout(() => {
+      mainContent.classList.add('visible');
+    }, 1000); // corresponde ao tempo da animação de transição
+  });
+</script>
+
 </body>
 </html>
